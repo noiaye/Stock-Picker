@@ -9,9 +9,14 @@ def stock_picker(array)
     end
 
     array.each_with_index do |thing, index1|
+      if index1 < index 
+        next
+      end
       if thing == array.max && index1 == 0
         next
       end
+
+      
       
       subtracted = elm - thing
       p "#{elm} - #{thing} = ", subtracted
@@ -35,7 +40,7 @@ def stock_picker(array)
   p storageHAsh
  
   storageHAsh.each do |i|
-    
+    p i[1]
     if i[0] < smallestfirst
       smallestfirst = i[0]
     end
