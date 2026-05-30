@@ -40,16 +40,21 @@ def stock_picker(array)
 
  
   
-  newHash = {}
-  
-  biggestindex = storageHAsh.find_index(storageHAsh.max_by {|k, v| k - v})
-  storageHAsh.each do |v, i|
-    newHash[v] = array.select {|elm| v - elm == i}
-  end
-  
-  final = newhash[biggestindex].map {|value| array.find_index(value)}
 
-  return final
+  
+  biggestvalues = storageHAsh.max_by {|k, v| k - v}
+  biggestvalues[1] = array.find {|elm| biggestvalues[0] - elm == biggestvalues[1]}
+
+
+  
+  return biggestvalues.map {|v, i| array.find_index(v)}
+  
+
+  
+  
+  # final = newHash[biggestindex].map {|value| array.find_index(value)}
+
+  # return final
   
   
   
