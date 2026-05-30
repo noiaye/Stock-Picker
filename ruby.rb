@@ -1,8 +1,7 @@
 def stock_picker(array)
   storageHAsh = {}
   smallest_value = 1
- smallestfirst = array.max
- smallestsecond = array.max
+
   array.each_with_index do |elm, index|
     if elm == array.max && index == 0
       next
