@@ -31,32 +31,32 @@ def stock_picker(array)
 
       
     end
-    p "smallest valuefor #{elm} = #{smallest_value}"
+   
     storageHAsh[elm] = smallest_value  
     smallest_value = 1
    
     
   end
-  p storageHAsh
+
  
-  storageHAsh.each do |i|
-    p i[1]
-    if i[0] < smallestfirst
-      smallestfirst = i[0]
-    end
-
   
-    if i[1] < smallestsecond
-      smallestsecond = i[1]
-      
-    end
-
-    
-
-
+  newHash = {}
+  
+  biggestindex = storageHAsh.find_index(storageHAsh.max_by {|k, v| k - v})
+  storageHAsh.each do |v, i|
+    newHash[v] = array.select {|elm| v - elm == i}
   end
-  p smallestfirst
-  p smallestsecond
+  
+  final = newhash[biggestindex].map {|value| array.find_index(value)}
+
+  return final
+  
+  
+  
+  
+  
+ 
+ 
   
   
   # return [array.find_index( ]
