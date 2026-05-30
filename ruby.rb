@@ -1,8 +1,8 @@
 def stock_picker(array)
   storageHAsh = {}
   smallest_value = 1
-  outside1 = 0
-  outside2 = 0
+ smallestfirst = array.max
+ smallestsecond = array.max
   array.each_with_index do |elm, index|
     if elm == array.max && index == 0
       next
@@ -35,27 +35,26 @@ def stock_picker(array)
   p storageHAsh
  
   storageHAsh.each do |i|
-    smallestfirst = array.max
+    
     if i[0] < smallestfirst
       smallestfirst = i[0]
-      outside1 = smallestfirst
     end
 
-    smallestsecond = array.max
+  
     if i[1] < smallestsecond
       smallestsecond = i[1]
-      outside2 = smallestsecond
+      
     end
 
     
 
 
   end
-  p outside1
-  p outside2
+  p smallestfirst
+  p smallestsecond
   
   
-  return [array.find_index(outside1), ]
+  # return [array.find_index( ]
 end
 
 
